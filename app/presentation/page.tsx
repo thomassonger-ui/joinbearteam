@@ -98,21 +98,20 @@ function WelcomeScreen({ onContinue }: { onContinue: () => void }) {
     <div className="flex-1 flex items-center justify-center min-h-screen px-4">
       <div className="animate-fade-in max-w-md w-full flex flex-col items-center gap-6 py-12">
         {/* Logo */}
-        <div className="text-2xl font-bold text-[var(--bt-blue)] tracking-tight">
-          🐻 BearTeam
-        </div>
-
-        {/* Profile */}
-        <div className="w-24 h-24 rounded-full bg-gray-200 border-4 border-white shadow-lg flex items-center justify-center text-3xl font-bold text-[var(--bt-blue)]">
-          {AGENT_FULL.split(' ').map(n => n[0]).join('')}
+        <div className="w-24 h-24 rounded-full bg-[#0F2747] flex items-center justify-center shadow-lg">
+          <span className="text-white text-3xl font-bold tracking-tight">BT</span>
         </div>
 
         <div className="text-center">
           <h1 className="text-3xl sm:text-4xl font-bold text-[var(--bt-text)]">
-            Welcome back, {AGENT_NAME}!
+            Meet Scout Live
           </h1>
-          <p className="text-[var(--bt-text-dim)] mt-2">
-            Your personalized resources are ready for you.
+          <p className="text-[var(--bt-text)] font-semibold mt-3">
+            Free Leads. No Fees. Built-In Coaching System.
+          </p>
+          <p className="text-[var(--bt-text-dim)] mt-2 text-sm leading-relaxed">
+            What to say, what to do, what&apos;s next — already mapped.<br />
+            You don&apos;t figure it out — you follow it.
           </p>
         </div>
 
@@ -120,27 +119,27 @@ function WelcomeScreen({ onContinue }: { onContinue: () => void }) {
         <div className="w-full flex flex-col gap-3 mt-4">
           <button
             onClick={onContinue}
-            className="w-full py-4 rounded-xl bg-[var(--bt-blue)] text-white font-semibold text-base flex items-center justify-center gap-2 hover:bg-[var(--bt-blue-dark)] transition-colors cursor-pointer"
+            className="w-full py-4 rounded-xl bg-[#0F2747] text-white font-semibold text-base flex items-center justify-center gap-2 hover:bg-[#1a3a5c] transition-colors cursor-pointer"
           >
-            📅 Schedule a Time to Talk
+            Schedule a Time to Talk
           </button>
           <button
             onClick={onContinue}
             className="w-full py-3 rounded-xl bg-white border border-gray-200 text-[var(--bt-text)] font-medium text-sm flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors cursor-pointer"
           >
-            📖 Go to My Resources
+            Go to My Resources
           </button>
           <button
             onClick={onContinue}
             className="w-full py-3 rounded-xl bg-white border border-gray-200 text-[var(--bt-text)] font-medium text-sm flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors cursor-pointer"
           >
-            🎬 Watch Overview Video
+            Watch Overview Video
           </button>
           <button
             onClick={() => window.location.reload()}
             className="w-full py-3 rounded-xl bg-white border border-gray-200 text-[var(--bt-text-dim)] font-medium text-sm flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors cursor-pointer"
           >
-            🔄 Start Presentation Over
+            Start Presentation Over
           </button>
         </div>
       </div>
