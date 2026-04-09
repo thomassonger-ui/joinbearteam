@@ -35,11 +35,7 @@ export default function RegisterPage() {
         borderRadius: 12, padding: '48px 40px', textAlign: 'center' }}>
 
         {/* BT Logo */}
-        <div style={{ width: 64, height: 64, border: '3px solid #0b1d3a', borderRadius: 4,
-          display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px',
-          fontWeight: 900, fontSize: 22, color: '#0b1d3a', letterSpacing: -1 }}>
-          BT
-        </div>
+        <img src="/bt-logo.jpg" alt="Bear Team" style={{ width: 80, height: 80, margin: '0 auto 20px', display: 'block', objectFit: 'contain' }} />
 
         <div style={{ fontSize: 24, fontWeight: 800, color: '#0b1d3a', marginBottom: 4 }}>
           BearTeamOS&#8482;
