@@ -85,7 +85,7 @@ export default function RegisterPage() {
               New Agent Setup
             </div>
             <input type="email" value={email} onChange={e => setEmail(e.target.value)}
-              placeholder="Your email address" required
+              placeholder="FIRSTNAME@BearTeam.com" required
               style={{ width: '100%', padding: '11px 14px', fontSize: 15, marginBottom: 12,
                 border: '1px solid #d1d5db', borderRadius: 6, outline: 'none',
                 boxSizing: 'border-box' }} />
