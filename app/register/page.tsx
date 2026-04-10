@@ -1,12 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { createClient } from '@supabase/supabase-js'
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
 
 export default function RegisterPage() {
   const [mode, setMode] = useState<'choose' | 'new' | 'sent'>('choose')
@@ -17,15 +11,20 @@ export default function RegisterPage() {
   async function handleSendLink(e: React.FormEvent) {
     e.preventDefault()
     setLoading(true); setError('')
-    const { error: err } = await supabase.auth.signInWithOtp({
-      email: email.trim().toLowerCase(),
-      options: {
-        emailRedirectTo: 'https://bearteam-os-dashboard.vercel.app/onboarding',
-      },
-    })
-    setLoading(false)
-    if (err) { setError(err.message); return }
-    setMode('sent')
+    try {
+      const res = await fetch('/api/send-access-link', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim().toLowerCase() }),
+      })
+      const data = await res.json()
+      if (!res.ok) { setError(data.error || 'Something went wrong.'); return }
+      setMode('sent')
+    } catch {
+      setError('Connection error. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
