@@ -72,8 +72,8 @@ async function sendViaSendGrid(to: string, magicLink: string) {
     },
     body: JSON.stringify({
       personalizations: [{ to: [{ email: to }] }],
-      from: { email: 'tom@bearteam.com', name: 'Tom Songer | Bear Team' },
-      reply_to: { email: 'tom@bearteam.com' },
+      from: { email: 'thomas.songer@gmail.com', name: 'Tom Songer | Bear Team' },
+      reply_to: { email: 'thomas.songer@gmail.com' },
       subject: 'Your BearTeamOS Access Link',
       content: [{ type: 'text/html', value: html }],
     }),
